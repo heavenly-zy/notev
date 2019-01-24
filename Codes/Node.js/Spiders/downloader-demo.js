@@ -1,13 +1,15 @@
-const axios = require('axios');
+const axios = require("axios");
 
 let [, url] = process.argv.splice(1);
+if (!url) {
+  url = "https://www.jianshu.com/p/7a9fbcbb1114";
+}
 
-axios.get('https://www.jianshu.com/p/7a9fbcbb1114')
-  .then(function (response) {
+axios
+  .get(url)
+  .then(function(response) {
     console.log(response.data);
   })
-  .catch(function (error) {
+  .catch(function(error) {
     console.log(error);
   });
-
-console.log(1111111);
